@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Direct Text Editing on Canvas</title>
+</head>
+
+<body>
+  <div class="wrap">
+    <div id="j-text"
+      style="display:inline-flex;padding:10px;border-radius:10px;font-size: 60px;font-weight: 700; background-color: rgb(0, 0, 0); font-family: sans-serif;">
+      <span style="color: rgb(255, 255, 255);padding:10px;" contenteditable>左边</span>
+      <span
+        style="color: rgb(0, 0, 0);padding:10px;margin-left:10px; background-color: rgb(255, 153, 0);border-radius: 10px;"
+        contenteditable>右边</span>
+    </div>
+    <div class="btn-wrap">
+      <!-- <button id="j-copy" class="copy">复制</button> -->
+      <button id="j-download" class="download">下载</button>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.js"
+    integrity="sha512-zPMZ/3MBK+R1rv6KcBFcf7rGwLnKS+xtB2OnWkAxgC6anqxlDhl/wMWtDbiYI4rgi/NrCJdXrmNGB8pIq+slJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/downloadjs/1.4.8/download.min.js"
+    integrity="sha512-WiGQZv8WpmQVRUFXZywo7pHIO0G/o3RyiAJZj8YXNN4AV7ReR1RYWVmZJ6y3H06blPcjJmG/sBpOVZjTSFFlzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    let node = document.getElementById('j-text'),
+      downloadDOM = document.getElementById('j-download'),
+      copyDOM = document.getElementById('j-copy')
+
+    function downloadImg() {
+      window.htmlToImage.toPng(node)
+        .then((dataUrl) => {
+          download(dataUrl, 'logo.png');
+        })
+    }
+
+    function copyImg() {
+      window.htmlToImage.toPng(node)
+        .then((dataUrl) => {
+          const img = new Image();
+
+          img.onload = function () {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = img.width;
+            canvas.height = img.height;
+
+            ctx.drawImage(img, 0, 0);
+
+            canvas.toBlob(function (blob) {
+
+              const dataItem = new window.ClipboardItem({ "image/png": blob });
+
+              navigator.clipboard.write([dataItem]).then(function () {
+                console.log('Image copied to clipboard');
+              }).catch(function (err) {
+                console.error('Failed to copy image to clipboard:', err);
+              });
+            }, 'image/png');
+          }
+
+          img.src = dataUrl;
+
+        })
+    }
+
+    downloadDOM.addEventListener('click', downloadImg, false)
+    copyDOM.addEventListener('click', copyImg, false)
+
+  </script>
+  <style>
+    .wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .download,
+    .copy {
+      margin-top: 10px;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .copy {
+      background-color: rgb(255, 153, 0);
+      color: #fff;
+    }
+  </style>
+</body>
+
+</html>
