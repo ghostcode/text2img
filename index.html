@@ -3,6 +3,7 @@
 
 <head>
   <title>Direct Text Editing on Canvas</title>
+  <link rel="stylesheet" href="./styles/index.css">
 </head>
 
 <body>
@@ -36,191 +37,19 @@
       <button id="j-copy" class="copy">复制</button>
       <button id="j-download" class="download">下载</button>
     </div>
+    <p id="j-tip" class="tip">不能每次都白嫖吧？你好歹支持一下！</p>
     <ul class="img-wrap">
       <li><img src="./imgs/wepay.jpg" alt=""></li>
       <li><img src="./imgs/alipay.jpg" alt=""></li>
     </ul>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.js"
-      integrity="sha512-zPMZ/3MBK+R1rv6KcBFcf7rGwLnKS+xtB2OnWkAxgC6anqxlDhl/wMWtDbiYI4rgi/NrCJdXrmNGB8pIq+slJQ=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/downloadjs/1.4.8/download.min.js"
-      integrity="sha512-WiGQZv8WpmQVRUFXZywo7pHIO0G/o3RyiAJZj8YXNN4AV7ReR1RYWVmZJ6y3H06blPcjJmG/sBpOVZjTSFFlzQ=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-      let node = document.getElementById('j-text'),
-        downloadDOM = document.getElementById('j-download'),
-        copyDOM = document.getElementById('j-copy'),
-        sizeDOM = document.getElementById('j-size'),
-        sizeCurrentDOM = document.querySelector('#j-size-current')
-
-      sizeDOM.addEventListener('input', function () {
-        node.style.fontSize = this.value + 'px'
-        sizeCurrentDOM.textContent = this.value + 'px'
-      })
-
-      function j_change_font(item) {
-        node.style.fontFamily = item.value
-        console.log(item, '<<<<<')
-      }
-
-      function downloadImg() {
-        window.htmlToImage.toPng(node)
-          .then((dataUrl) => {
-            download(dataUrl, 'logo.png');
-          })
-      }
-
-      function copyImg() {
-        console.log('copy<<<<');
-        copyDOM.textContent = '复制中...'
-        copyDOM.disabled = true
-
-        window.htmlToImage.toPng(node)
-          .then((dataUrl) => {
-            const img = new Image();
-
-            img.onload = function () {
-              const canvas = document.createElement('canvas');
-              const ctx = canvas.getContext('2d');
-              canvas.width = img.width;
-              canvas.height = img.height;
-
-              ctx.drawImage(img, 0, 0);
-
-              canvas.toBlob(function (blob) {
-
-                const dataItem = new window.ClipboardItem({ "image/png": blob });
-
-                navigator.clipboard.write([dataItem]).then(function () {
-                  console.log('Image copied to clipboard');
-                }).catch(function (err) {
-                  console.error('Failed to copy image to clipboard:', err);
-                });
-              }, 'image/png');
-
-              copyDOM.textContent = '复制'
-              copyDOM.disabled = false
-
-            }
-
-            img.src = dataUrl;
-
-          }).catch(function (error) {
-            console.error('Error while converting to PNG', error);
-          });
-      }
-
-      downloadDOM.addEventListener('click', downloadImg, false)
-      copyDOM.addEventListener('click', copyImg, false)
-
-    </script>
-    <style>
-      @font-face {
-        font-family: "Trickster";
-        src:
-          local('zpix'),
-          url("./fonts/zpix.ttf") format("truetype");
-      }
-
-      @font-face {
-        font-family: "AlimamaFangYuanTiVF-Thin";
-        src:
-          local('AlimamaFangYuanTiVF-Thin'),
-          url("./fonts/AlimamaFangYuanTiVF-Thin/AlimamaFangYuanTiVF-Thin.ttf") format("truetype"),
-          url("./fonts/AlimamaFangYuanTiVF-Thin/AlimamaFangYuanTiVF-Thin.woff") format("woff"),
-          url("./fonts/AlimamaFangYuanTiVF-Thin/AlimamaFangYuanTiVF-Thin.woff2") format("woff2");
-      }
-
-      @font-face {
-        font-family: "AlimamaDaoLiTi-Regular";
-        src:
-          local('AlimamaFangYuanTiVF-Thin'),
-          url("./fonts/AlimamaDaoLiTi-Regular/AlimamaDaoLiTi-Regular.otf") format("otf"),
-          url("./fonts/AlimamaDaoLiTi-Regular/AlimamaDaoLiTi-Regular.ttf") format("truetype"),
-          url("./fonts/AlimamaDaoLiTi-Regular/AlimamaDaoLiTi-Regular.woff") format("woff"),
-          url("./fonts/AlimamaDaoLiTi-Regular/AlimamaDaoLiTi-Regular.woff2") format("woff2");
-      }
-
-      @font-face {
-        font-family: "AlimamaShuHeiTi-bold";
-        src:
-          local('AlimamaFangYuanTiVF-Thin'),
-          url("./fonts/AlimamaShuHeiTi-bold/AlimamaShuHeiTi-bold.otf") format("otf"),
-          url("./fonts/AlimamaShuHeiTi-bold/AlimamaShuHeiTi-bold.ttf") format("truetype"),
-          url("./fonts/AlimamaShuHeiTi-bold/AlimamaShuHeiTi-bold.woff") format("woff"),
-          url("./fonts/AlimamaShuHeiTi-bold/AlimamaShuHeiTi-bold.woff2") format("woff2");
-      }
-
-      @font-face {
-        font-family: "AlimamaDongFangDaKai-Regular";
-        src:
-          local('AlimamaFangYuanTiVF-Thin'),
-          url("./fonts/AlimamaDongFangDaKai-Regular/Alimama_DongFangDaKai_Regular.otf") format("otf"),
-          url("./fonts/AlimamaDongFangDaKai-Regular/Alimama_DongFangDaKai_Regular.ttf") format("truetype"),
-          url("./fonts/AlimamaDongFangDaKai-Regular/Alimama_DongFangDaKai_Regular.woff") format("woff"),
-          url("./fonts/AlimamaDongFangDaKai-Regular/Alimama_DongFangDaKai_Regular.woff2") format("woff2");
-      }
-
-
-      input:focus {
-        -webkit-user-select: text;
-        user-select: text;
-      }
-
-
-
-      .wrap {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .setup {
-        display: flex;
-        flex-direction: column;
-        margin-top: 20px;
-        margin-bottom: 20px;
-      }
-
-      .download,
-      .copy {
-        margin-top: 10px;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 10px;
-        font-size: 20px;
-        cursor: pointer;
-      }
-
-      .copy {
-        background-color: rgb(255, 153, 0);
-        color: #fff;
-      }
-
-      .img-wrap {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        width: 600px;
-        list-style: none;
-      }
-
-      .img-wrap li {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex: 1;
-        height: auto;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
-
-      .img-wrap li img {
-        width: 100%;
-        height: auto;
-      }
-    </style>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.js"
+    integrity="sha512-zPMZ/3MBK+R1rv6KcBFcf7rGwLnKS+xtB2OnWkAxgC6anqxlDhl/wMWtDbiYI4rgi/NrCJdXrmNGB8pIq+slJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/downloadjs/1.4.8/download.min.js"
+    integrity="sha512-WiGQZv8WpmQVRUFXZywo7pHIO0G/o3RyiAJZj8YXNN4AV7ReR1RYWVmZJ6y3H06blPcjJmG/sBpOVZjTSFFlzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./scripts/index.js"></script>
 </body>
 
 </html>

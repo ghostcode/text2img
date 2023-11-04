@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Trickster";
+  src: local("zpix"), url("../fonts/zpix.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "AlimamaFangYuanTiVF-Thin";
+  src: local("AlimamaFangYuanTiVF-Thin"),
+    url("../fonts/AlimamaFangYuanTiVF-Thin/AlimamaFangYuanTiVF-Thin.ttf")
+      format("truetype"),
+    url("../fonts/AlimamaFangYuanTiVF-Thin/AlimamaFangYuanTiVF-Thin.woff")
+      format("woff"),
+    url("../fonts/AlimamaFangYuanTiVF-Thin/AlimamaFangYuanTiVF-Thin.woff2")
+      format("woff2");
+}
+
+@font-face {
+  font-family: "AlimamaDaoLiTi-Regular";
+  src: local("AlimamaFangYuanTiVF-Thin"),
+    url("../fonts/AlimamaDaoLiTi-Regular/AlimamaDaoLiTi-Regular.otf")
+      format("otf"),
+    url("../fonts/AlimamaDaoLiTi-Regular/AlimamaDaoLiTi-Regular.ttf")
+      format("truetype"),
+    url("../fonts/AlimamaDaoLiTi-Regular/AlimamaDaoLiTi-Regular.woff")
+      format("woff"),
+    url("../fonts/AlimamaDaoLiTi-Regular/AlimamaDaoLiTi-Regular.woff2")
+      format("woff2");
+}
+
+@font-face {
+  font-family: "AlimamaShuHeiTi-bold";
+  src: local("AlimamaFangYuanTiVF-Thin"),
+    url("../fonts/AlimamaShuHeiTi-bold/AlimamaShuHeiTi-bold.otf") format("otf"),
+    url("../fonts/AlimamaShuHeiTi-bold/AlimamaShuHeiTi-bold.ttf")
+      format("truetype"),
+    url("../fonts/AlimamaShuHeiTi-bold/AlimamaShuHeiTi-bold.woff")
+      format("woff"),
+    url("../fonts/AlimamaShuHeiTi-bold/AlimamaShuHeiTi-bold.woff2")
+      format("woff2");
+}
+
+@font-face {
+  font-family: "AlimamaDongFangDaKai-Regular";
+  src: local("AlimamaFangYuanTiVF-Thin"),
+    url("../fonts/AlimamaDongFangDaKai-Regular/Alimama_DongFangDaKai_Regular.otf")
+      format("otf"),
+    url("../fonts/AlimamaDongFangDaKai-Regular/Alimama_DongFangDaKai_Regular.ttf")
+      format("truetype"),
+    url("../fonts/AlimamaDongFangDaKai-Regular/Alimama_DongFangDaKai_Regular.woff")
+      format("woff"),
+    url("../fonts/AlimamaDongFangDaKai-Regular/Alimama_DongFangDaKai_Regular.woff2")
+      format("woff2");
+}
+
+input:focus {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.setup {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.download,
+.copy {
+  margin-top: 10px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.copy {
+  background-color: rgb(255, 153, 0);
+  color: #fff;
+}
+
+.tip {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.img-wrap {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 600px;
+  list-style: none;
+}
+
+.img-wrap li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.img-wrap li img {
+  width: 100%;
+  height: auto;
+}
