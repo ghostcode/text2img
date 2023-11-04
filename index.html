@@ -36,6 +36,10 @@
       <button id="j-copy" class="copy">复制</button>
       <button id="j-download" class="download">下载</button>
     </div>
+    <ul class="img-wrap">
+      <li><img src="./imgs/wepay.jpg" alt=""></li>
+      <li><img src="./imgs/alipay.jpg" alt=""></li>
+    </ul>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.js"
       integrity="sha512-zPMZ/3MBK+R1rv6KcBFcf7rGwLnKS+xtB2OnWkAxgC6anqxlDhl/wMWtDbiYI4rgi/NrCJdXrmNGB8pIq+slJQ=="
       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -191,6 +195,30 @@
       .copy {
         background-color: rgb(255, 153, 0);
         color: #fff;
+      }
+
+      .img-wrap {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 600px;
+        list-style: none;
+      }
+
+      .img-wrap li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        height: auto;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .img-wrap li img {
+        width: 100%;
+        height: auto;
       }
     </style>
 </body>
