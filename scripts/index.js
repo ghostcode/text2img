@@ -22,7 +22,6 @@ function downloadImg() {
 }
 
 function copyImg() {
-  console.log("copy<<<<");
   copyDOM.textContent = "复制中...";
   copyDOM.disabled = true;
 

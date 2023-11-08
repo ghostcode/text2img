@@ -34,13 +34,13 @@
 
 @font-face {
   font-family: "AlimamaShuHeiTi-bold";
-  src: local("AlimamaFangYuanTiVF-Thin"),
-    url("../fonts/AlimamaShuHeiTi-bold/AlimamaShuHeiTi-bold.otf") format("otf"),
-    url("../fonts/AlimamaShuHeiTi-bold/AlimamaShuHeiTi-bold.ttf")
+  src: local("AlimamaShuHeiTi-Bold"),
+    url("../fonts/AlimamaShuHeiTi-bold/AlimamaShuHeiTi-Bold.otf") format("otf"),
+    url("../fonts/AlimamaShuHeiTi-bold/AlimamaShuHeiTi-Bold.ttf")
       format("truetype"),
-    url("../fonts/AlimamaShuHeiTi-bold/AlimamaShuHeiTi-bold.woff")
+    url("../fonts/AlimamaShuHeiTi-bold/AlimamaShuHeiTi-Bold.woff")
       format("woff"),
-    url("../fonts/AlimamaShuHeiTi-bold/AlimamaShuHeiTi-bold.woff2")
+    url("../fonts/AlimamaShuHeiTi-bold/AlimamaShuHeiTi-Bold.woff2")
       format("woff2");
 }
 
