@@ -4,57 +4,43 @@
 }
 
 @font-face {
-  font-family: "Trickster";
+  font-family: "zpix";
   src: local("zpix"), url("../fonts/zpix.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "AlimamaFangYuanTiVF-Thin";
   src: local("AlimamaFangYuanTiVF-Thin"),
-    url("../fonts/AlimamaFangYuanTiVF-Thin/AlimamaFangYuanTiVF-Thin.ttf")
-      format("truetype"),
-    url("../fonts/AlimamaFangYuanTiVF-Thin/AlimamaFangYuanTiVF-Thin.woff")
-      format("woff"),
-    url("../fonts/AlimamaFangYuanTiVF-Thin/AlimamaFangYuanTiVF-Thin.woff2")
-      format("woff2");
+    url("../fonts/AlimamaFangYuanTiVF-Thin/AlimamaFangYuanTiVF-Thin.ttf") format("truetype"),
+    url("../fonts/AlimamaFangYuanTiVF-Thin/AlimamaFangYuanTiVF-Thin.woff") format("woff"),
+    url("../fonts/AlimamaFangYuanTiVF-Thin/AlimamaFangYuanTiVF-Thin.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "AlimamaDaoLiTi-Regular";
   src: local("AlimamaFangYuanTiVF-Thin"),
-    url("../fonts/AlimamaDaoLiTi-Regular/AlimamaDaoLiTi-Regular.otf")
-      format("otf"),
-    url("../fonts/AlimamaDaoLiTi-Regular/AlimamaDaoLiTi-Regular.ttf")
-      format("truetype"),
-    url("../fonts/AlimamaDaoLiTi-Regular/AlimamaDaoLiTi-Regular.woff")
-      format("woff"),
-    url("../fonts/AlimamaDaoLiTi-Regular/AlimamaDaoLiTi-Regular.woff2")
-      format("woff2");
+    url("../fonts/AlimamaDaoLiTi-Regular/AlimamaDaoLiTi-Regular.otf") format("otf"),
+    url("../fonts/AlimamaDaoLiTi-Regular/AlimamaDaoLiTi-Regular.ttf") format("truetype"),
+    url("../fonts/AlimamaDaoLiTi-Regular/AlimamaDaoLiTi-Regular.woff") format("woff"),
+    url("../fonts/AlimamaDaoLiTi-Regular/AlimamaDaoLiTi-Regular.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "AlimamaShuHeiTi-bold";
   src: local("AlimamaShuHeiTi-Bold"),
     url("../fonts/AlimamaShuHeiTi-bold/AlimamaShuHeiTi-Bold.otf") format("otf"),
-    url("../fonts/AlimamaShuHeiTi-bold/AlimamaShuHeiTi-Bold.ttf")
-      format("truetype"),
-    url("../fonts/AlimamaShuHeiTi-bold/AlimamaShuHeiTi-Bold.woff")
-      format("woff"),
-    url("../fonts/AlimamaShuHeiTi-bold/AlimamaShuHeiTi-Bold.woff2")
-      format("woff2");
+    url("../fonts/AlimamaShuHeiTi-bold/AlimamaShuHeiTi-Bold.ttf") format("truetype"),
+    url("../fonts/AlimamaShuHeiTi-bold/AlimamaShuHeiTi-Bold.woff") format("woff"),
+    url("../fonts/AlimamaShuHeiTi-bold/AlimamaShuHeiTi-Bold.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "AlimamaDongFangDaKai-Regular";
   src: local("AlimamaFangYuanTiVF-Thin"),
-    url("../fonts/AlimamaDongFangDaKai-Regular/Alimama_DongFangDaKai_Regular.otf")
-      format("otf"),
-    url("../fonts/AlimamaDongFangDaKai-Regular/Alimama_DongFangDaKai_Regular.ttf")
-      format("truetype"),
-    url("../fonts/AlimamaDongFangDaKai-Regular/Alimama_DongFangDaKai_Regular.woff")
-      format("woff"),
-    url("../fonts/AlimamaDongFangDaKai-Regular/Alimama_DongFangDaKai_Regular.woff2")
-      format("woff2");
+    url("../fonts/AlimamaDongFangDaKai-Regular/Alimama_DongFangDaKai_Regular.otf") format("otf"),
+    url("../fonts/AlimamaDongFangDaKai-Regular/Alimama_DongFangDaKai_Regular.ttf") format("truetype"),
+    url("../fonts/AlimamaDongFangDaKai-Regular/Alimama_DongFangDaKai_Regular.woff") format("woff"),
+    url("../fonts/AlimamaDongFangDaKai-Regular/Alimama_DongFangDaKai_Regular.woff2") format("woff2");
 }
 
 input:focus {
